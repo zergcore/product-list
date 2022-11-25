@@ -17,8 +17,9 @@ const ProductList = () => {
 	
 	return (
 		
-		<section className="container my-2">
-				<div className="form-floating">
+		<section className="container-fluid my-2">
+			<div className="container">
+			<div className="form-floating">
 					<select 
 							className="form-select" 
 							name='selectElements' 
@@ -33,30 +34,32 @@ const ProductList = () => {
 					</select>
 					<label htmlFor="floatingSelect">Cuantos elementos te gustaria tener por fila?</label>
 				</div>
+			</div>
+				
 			<div className="container my-2">
 				
-				<div className="row align-items-center">
+				<div className="row justify-content-evenly">
 					{products.map((product, i)=>(
 						<>
 						{elements==6 && 
-							<div className="col-md-2" key={i}>
-								<ProductItem product={product} key={product.id} elements={elements} />
+							<div className="col-2 justify-content-center align-self-center" key={`${elements}${i}${product.id}`}>
+								<ProductItem product={product} key={`${elements}${product.id}`} />
 							</div>
 							}
 						{elements==4 && 
-							<div className="col-md-3" key={i}>
-								<ProductItem product={product} key={product.id} elements={elements} />
+							<div className="col-3 justify-content-center align-self-center" key={`${elements}${i}${product.id}`}>
+								<ProductItem product={product} key={`${elements}${product.id}`} />
 							</div>
 							}
 						{elements==3 && 
-							<div className="col-md-4" key={i}>
-								<ProductItem product={product} key={product.id} elements={elements} />
+							<div className="col-4 justify-content-center align-self-center" key={`${elements}${i}${product.id}`}>
+								<ProductItem product={product} key={`${elements}${product.id}`} />
 							</div>
 
 							}
 						{elements==2 && 
-							<div className="col-md-6" key={i}>
-								<ProductItem product={product} key={product.id} elements={elements} />
+							<div className="col-6 justify-content-center align-self-center" key={`${elements}${i}${product.id}`}>
+								<ProductItem product={product} key={`${elements}${product.id}`} />
 							</div>
 							}
 						</>
